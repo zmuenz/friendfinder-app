@@ -22,7 +22,7 @@ module.exports = function (app) {
             scoreDiff = 0
             for (var h = 0; h < 10; i++) {
                 let friendScore = friendsData[i].scores[h];
-                let userScore = userInput.scores[0];
+                let userScore = userInput.score[0];
                 scoreDiff = scoreDiff + Math.abs(parseInt(friendScore) - parseInt(userScore));
             }
 
