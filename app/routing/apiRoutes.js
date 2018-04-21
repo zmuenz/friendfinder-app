@@ -27,8 +27,8 @@ module.exports = function (app) {
             }
 
             if (scoreDiff < bestMatch.matchScore) {
-                bestMatch.bestName = friendsData[i].name;
-                bestMatch.bestPhoto = friendsData[i].photo;
+                bestMatch.bestMatchName = friendsData[i].name;
+                bestMatch.bestMatchPhoto = friendsData[i].photo;
                 bestMatch.matchScore = scoreDiff;
             }
         };
