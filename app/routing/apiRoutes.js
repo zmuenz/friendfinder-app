@@ -9,6 +9,7 @@ module.exports = function (app) {
     app.post("/api/friends", function (req, res) {
         
         var userInput = req.body;
+        var userScores = userInput.scores;
 
         var bestMatch = {
             bestMatchName: "",
@@ -20,10 +21,8 @@ module.exports = function (app) {
 
         for (var i = 0; i < friendsData.length; i++) {
             scoreDiff = 0
-            for (var h = 0; h < 10; i++) {
-                var friendScore = friendsData[i].scores[h];
-                var userScore = userInput[0].scores[h];
-                scoreDiff = scoreDiff + Math.abs(parseInt(friendScore) - parseInt(userScore));
+            for (var h = 0; h < 10; h++) {
+                scoreDiff = scoreDiff + Math.abs(parseInt(friendsData[i].scores[h]) - parseInt(userScores[h]));
             }
 
             if (scoreDiff < bestMatch.matchScore) {
@@ -33,7 +32,7 @@ module.exports = function (app) {
             }
         };
 
-        friendsData.push(req.body);
+        friendsData.push(userInput);
         res.json(bestMatch);
     });
 
