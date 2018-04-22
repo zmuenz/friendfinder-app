@@ -7,4 +7,4 @@ This FriendFinder app surveys the user for personality using 10 questions, then 
 HTML, CSS, Javascript, Node.js, Express.js
 
 ### Heroku Demo
-You can find this app running on [Heroku](http://)
+You can find this app running on [Heroku](https://peaceful-island-18643.herokuapp.com/).
